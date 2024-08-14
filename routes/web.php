@@ -15,8 +15,9 @@ Route::put('products/{product}', [ProductController::class, 'update'])->name('pr
 Route::delete('products/{product}/delete', [ProductController::class, 'delete'])->name('products.delete'); // Delete current product query
 
 // User routes
-Route::get('user/registration', [UserController::class, 'index'])->name('users.index');
-Route::post('user/registration', [UserController::class, 'show'])->name('users.show'); // Open profile for current user
+Route::get('user/registration', [UserController::class, 'register'])->name('users.register'); // Open registration page
+Route::post('user/registration', [UserController::class, 'show'])->name('users.show'); // Register query
+Route::get('user/auth', [UserController::class, 'auth'])->name('users.auth'); // Open auth page
 // Route::post('user.registration/{user}', [UserController::class, 'store'])->name('users.show');
 // Other routes
 // 
